@@ -1,0 +1,73 @@
+/* Wrapper of each question */
+question {
+  border-top: solid;
+  display: block;
+  padding: 10px;
+  margin: 8px 8px 64px 8px;
+}
+
+
+answer {
+  display: inline-block;
+  padding: 15px;
+  margin: 10px;
+  background: #bbbaba;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+
+.answerable:hover {
+  background: #c9c6c6;
+}
+
+.wrong {
+  background: rgb(179, 31, 31);
+}
+
+
+.wrong:after {
+  content: "... aïe";
+}
+
+answer[good].answered {
+  background: rgb(87, 216, 87);
+}
+
+answer[good].notanswered {
+  border-color: rgb(87, 216, 87);
+}
+
+
+answer[good].notanswered::before {
+  content: "→";
+}
+
+
+answer.notanswered {
+  color: rgb(202, 135, 135);
+}
+
+
+answer.answered {
+  background: rgb(179, 31, 31);
+}
+
+
+.good:after {
+  content: "...bravo !";
+}
+
+explanation {
+  display: none;
+  background: #f0ee6e;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+
+
+.explanationVisible {
+  display: block;
+  visibility: visible;
+}

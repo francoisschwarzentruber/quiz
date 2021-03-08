@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    Quiz
+  </title>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link href="quiz.css" rel="stylesheet">
+  <script src="quiz.js"></script>
+
+</head>
+
+<body>
+  <h1>Quiz de logique du premier ordre - sémantique</h1>
+
+  
+  
+  <h2>Conséquence sémantique</h2>
+  <question>
+    Est-ce que la formule \(\forall x \exists y x R y\) est conséquence sémantique de l'ensemble \(\{\forall x, x R x\}\) ?
+    <answer good>Oui</answer>
+    <answer>Non</answer>
+    <explanation>
+      Une formule \(\phi\) est conséquence sémantique d'un ensemble \(\Gamma\) de formules si tout modèle des formules de \(\Gamma\) est aussi un modèle de \(\phi\). Et là, si on prend un modèle \(\forall x, x R x\), il ressemble à un graphe avec des arcs réflexifs sur chaque élément du domaine. Et donc, tout élément admet un successeur, i.e. c'est aussi un modèle de \(\forall x, \exists y x R y\).
+    </explanation>
+  </question>
+
+
+
+  <question>
+  On se place en logique du premier ordre égalitaire. Est-ce que \(\forall x, x = x\) est valide ?
+    <answer good>Oui</answer>
+    <answer>Non</answer>
+    <explanation>
+      Une formule est valide si elle est vraie dans tous les modèles. Comme on se place en logique égalitaire, on ne considère que des modèles où le symbole de prédicats = est interprété par l'égalité. Donc la formule \(\forall x, x = x\) est valide.
+    </explanation>
+  </question>
+
+
+    <question>
+   Considérons un modèle de \(\exists x, p(x)\). Que peut-on dire de l'interprétation de \(p\) dans ce modèle ?
+    <answer>C'est un symbole de constante <explanation>Cela n'a aucun sens. Les symboles de constante apparaissent dans la syntaxe.</explanation>
+    </answer>
+    <answer>C'est un élément du domaine</answer>
+    <answer good>C'est un sous-ensemble non vide inclus dans le domaine</answer>
+    <explanation>
+    L'interprétation d'un prédicat unaire est bien le sous-ensemble des éléments qui, intuitivement satisfont la propriété correspondante au prédicat unaire. Et comme la formule dit qu'il existe un élément avec cette propriété, l'interprétation est non vide.
+    </explanation>
+  </question>
+  
+  
+  
+  <question>
+    Est-ce que la formule \(\forall x, p(x)\) est conséquence sémantique de l'ensemble \(\{\exists x, p(x)\}\) ?
+    <answer>Oui</answer>
+    <answer good>Non</answer>
+    <explanation>
+    Non. Car on peut trouver un modèle de \(\{\exists x, p(x)\}\) qui n'est pas modèle de \(\forall x, p(x)\). Par exemple, on prend le modèle dont le domaine est \(\{0, 1\}\) où l'interprétation de \(p\) est le sous-ensemble \(\{1\}\).
+    </explanation>
+  </question>
+  
+  
+
+  
+  
+
+<question>
+    Est-ce que la formule \(\exists x, p(x)\) est conséquence sémantique de l'ensemble \(\{\forall x, p(x)\}\) ?
+    <answer good>Oui</answer>
+    <answer>Non</answer>
+    <explanation>
+    Oui ! Souvenez-vous, le domaine d'un modèle est toujours non vide. C'est une convention.
+    </explanation>
+  </question>
+  
+  
+  
+  <question>
+  Est-ce que la formule \(\forall x, p(x)\) est conséquence sémantique de l'ensemble \(\{p(0), p(1), p(2), ...\}\) ?
+    <answer good>Non</answer>
+    <answer>Oui</answer>
+    <explanation>
+      Eh non. Pour cette question, on suppose que tous les entiers sont des symboles de constante dans la signature. Si on prend un modèle de \(\{p(0), p(1), p(2), ...\}\), l'interprétation de p contient toutes les interprétations de 0, 1, 2, etc. Mais rien nous empêche d'avoir un autre élément qui n'est ni l'interprétation de 0, ni de 1, ni de 2, etc. Exercice : écrire proprement la définition d'un tel modèle à 2 éléments qui est modèle de \(\{p(0), p(1), p(2), ...\}\) mais pas modèle de \(\forall x, p(x)\).
+    </explanation>
+  </question>
+
+  
+  
+  
+  <h2>Signature</h2>
+  
+  <question>
+    Qu'est-ce qu'une signature ?
+    <answer><explanation>Ca c'est un modèle.</explanation>La spécification d'un domaine et des interprétations pour les symboles de fonction et prédicats</answer>
+    <answer good>La spécification des symboles de fonction et prédicats et de leurs arités</answer>
+    <explanation>
+      La signature donne le "vocabulaire" que l'on utilise. Un modèle va dire comment on interprète les symboles. Une formule sur une certaine signature utilise ce vocabulaire.
+    </explanation>
+  </question>
+  
+  <question>
+    Considérons un modèle \(\mathcal S = (\mathbb{N}, +^{\mathcal S})\). On se place en logique égalitaire. Est-ce que je peux évaluer la formule \(\exists x, estpair(x)\) ?
+    <answer good>Non</answer>
+    <answer >Oui</answer>
+     <explanation>
+     Le symbole de prédicat `estpair' n'a pas l'air d'être dans la signature du modèle \(\mathcal S\). Ce modèle ne dit pas comment interpréter le symbole de prédicat `estpair'. Donc non, je ne vais pas savoir dire si cette formule est vraie dans \(\mathcal S\).
+    </explanation>
+  </question>
+  
+
+  
+  <question>
+    Considérons un modèle \(\mathcal S = (\mathbb{N}, +^{\mathcal S})\). On se place en logique égalitaire. Est-ce que je peux évaluer la formule \(\exists x \exists y x=y + y\) ?
+    <answer>Non</answer>
+    <answer good>Oui</answer>
+     <explanation>
+     L'interprétation du symbole = est implicite : il s'agit de l'égalité sur \(\mathbb{N}\). Donc pas de soucis pour interpréter la formule.
+    </explanation>
+  </question>
+  
+  
+  <h2>Modèles de Herbrand</h2>
+Un modèle de Herbrand est un modèle où le domaine est l'ensemble des termes clos, et où chaque symbole f de fonction est interprété comme le "collage de f" (voir cours). Considérons un modèle de Herbrand.
+
+  <question>Soit \(p\) un symbole de prédicat et \(a\) un symbole de constante. Est-ce que \(p(a)\) est dans le domaine d'un modèle de Herbrand ?
+    <answer good>Non</answer>
+    <answer>Oui</answer>
+    <explanation>
+      \(p(a)\) n'est pas un terme ! C'est une formule atomique. On rappelle qu'un terme a comme vocation de représenter un élément dans un certain modèle. Alors qu'une formule a comme vocation d'être vraie ou fausse dans un certain modèle.
+    </explanation>
+  </question>
+  
+  
+  
+  <question>On considère une signature avec \(p\) un symbole de prédicat et \(a\) un symbole de constante. Est-ce que \(p(a)\) est dans le domaine d'un modèle de Herbrand ?
+    <answer good>Non</answer>
+    <answer>Oui</answer>
+    <explanation>
+      \(p(a)\) n'est pas un terme ! C'est une formule atomique. On rappelle qu'un terme a comme vocation de représenter un élément dans un certain modèle. Alors qu'une formule a comme vocation d'être vraie ou fausse dans un certain modèle.
+    </explanation>
+  </question>
+
+  
+  
+    
+  <question>On considère une signature avec seulement un symbole de constante \(a\) et pas de symbole de fonctions non constante. Combien y-a-t-il d'éléments dans le domaine d'un modèle de Herbrand ?
+    <answer good>1</answer>
+    <answer>Une infinité</answer>
+    <explanation>
+    Il n'y a qu'un seul terme clos : \(a\).
+    </explanation>
+  </question>
+  
+  
+  
+  <question>On considère une signature avec seulement un symbole de constante \(a\) et un symbole de fonction \(f\) d'arité 1. Combien y-a-t-il d'éléments dans le domaine d'un modèle de Herbrand ?
+    <answer>1</answer>
+    <answer>2</answer>
+    <answer good>Une infinité</answer>
+    <explanation>
+   Il y a une infinité de termes clos : \(a\), \(f(a)\), \(f(f(a))\), etc.
+    </explanation>
+  </question>
+  
+  
+  
+</body>
+
+</html>

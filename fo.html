@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    Quiz
+  </title>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link href="quiz.css" rel="stylesheet">
+  <script src="quiz.js"></script>
+
+</head>
+
+<body>
+  <h1>Quiz de logique du premier ordre - syntaxe et sémantique</h1>
+
+  <question>
+    Est-ce que la formule \(\exists x, \forall y, x = y\) est satisfiable ?
+    <answer good>Oui</answer>
+    <answer>Non</answer>
+    <explanation>
+      Être satisfiable c'est admettre au moins un modèle. Là, cette formule est vraie dans un modèle où le domaine n'a
+      qu'un seul élément.
+    </explanation>
+  </question>
+
+
+
+  <question>
+    Soit deux variables \(x\) et \(y\) différentes. Qu'en pensez-vous ?
+    <answer>Que l'on considère des éléments \(x\) et \(y\) différents.
+      <explanation>
+        Attention cette réponse est un non-sens : \(x\) et \(y\) sont des symboles de variables et pas des éléments !
+      </explanation>
+    </answer>
+
+    <answer good>Que l'on considère deux symboles de variables différents.</answer>
+    <explanation>
+      En logique, nous faisons la différence entre syntaxe et sémantique. Quand on parle de variables, on est au niveau
+      de la syntaxe. On parle bien des symboles pour les variables et non pas de leur interprétations.
+    </explanation>
+  </question>
+
+
+
+  <question>
+    La formule \(x = y\) est vraie dans un modèle (structure munie d'une certaine assignation). Qu'en pensez-vous
+    ?
+
+    <answer>Que l'on considère deux symboles de variables \(x\) et \(y\) différents.</answer>
+    <answer good>Que les interprétations des variables sont égales.</answer>
+    <explanation>
+      Là, on parle de sémantique et des interprétations des variables dans un modèle. L'interprétation de \(x\) est un
+      élément du domaine. L'interprétation de \(y\) aussi. Comme la formule est \(x = y\) est vraie dans ce modèles,
+      l'interprétation de \(x\)
+      égale à celle de \(y\).
+    </explanation>
+  </question>
+
+
+  <question>
+    Est-ce que les formules \(\exists x \forall y R(x, y)\) et \(\forall y \exists x R(x, y)\) sont équivalentes ?
+
+    <answer>Bien sûr</answer>
+    <answer good>Oh non..</answer>
+    <explanation>
+      Elles ne sont pas équivalentes. Je vous invite à donner un modèle de l'une mais pas de l'autre.
+    </explanation>
+  </question>
+
+
+  <question>
+    Est-ce que \(R(g(a), f(h(b, x)))\) est une formule atomique ?
+
+    <answer good>Bien sûr</answer>
+    <answer>Oh non..</answer>
+    <explanation>
+      Oui c'est une formule atomique. Les "sous-parties" de la formule qui sont plus petits comme \(g(a)\) ou \(f(h(b,
+      x))\) ne sont pas des formules mais des termes.
+    </explanation>
+  </question>
+
+
+  <question>
+    Est-ce que \(1+1\) est une formule ?
+
+    <answer>Bien sûr</answer>
+    <answer good>Oh non..</answer>
+    <explanation>
+      Ce n'est pas une formule mais un terme. L'interprétation d'une formule dans un modèle (structure + assignation des variables)
+      est vraie ou fausse. L'interprétation d'un terme dans un modèle  (structure + assignation des variables, d'ailleurs une algèbre + assignation des varibles suffit) est un élément du domaine.
+    </explanation>
+  </question>
+
+
+  <question>
+    En supposant que = est interprété comme l'égalité car on se place en logique du premier ordre égalitaire, est-ce que
+    \(1+1 = 2\) est une formule valide ?
+
+    <answer>Bien sûr</answer>
+    <answer good>Non</answer>
+    <explanation>
+      Pour interpréter une formule, il faut un modèle qui donne l'interprétation des symboles de constantes 1 et 2,
+      l'interprétation du symbole de fonction +. Seule l'interprétation du symbole de prédicat = est "forcée" : comme on
+      se place en logique du première ordre égalitaire, on ne considère que des modèles où le symbole = est interprété
+      comme l'égalité sur le domaine. Donner un modèle dans lequel la formule \(1+1 = 2\) est fausse.
+    </explanation>
+  </question>
+
+
+
+  <question>
+    En supposant que = est interprété comme l'égalité car on se place en logique du premier ordre égalitaire, est-ce que
+    \(1+1 = 1+1\) est une formule valide ?
+
+    <answer good>Bien sûr</answer>
+    <answer>Non</answer>
+    <explanation>
+      Dans tout modèle, \(1+1\) est interprété comme un certain élément \(e\), comme l'élément \(e\) est égal à
+      l'élément \(e\), la formule \(1+1 = 1+1\) est valide, oui.
+    </explanation>
+  </question>
+
+
+  <question>
+    Est-ce que la formule \(\exists x,\top \) est valide ?
+    <answer good>Oui</answer>
+    <answer>Non</answer>
+    <explanation>
+      La formule \(\exists x,\top \) est valide car le domaine de tout modèle est non vide (c'est par définition d'une structure).
+    </explanation>
+  </question>
+
+
+</body>
+
+</html>
