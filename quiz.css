@@ -26,37 +26,37 @@ answer {
 }
 
 
-.wrong:after {
-  content: "... aïe";
-}
+
 
 answer[good].answered {
   background: rgb(87, 216, 87);
+}
+
+answer[good].answered:after {
+  content: "👍";
 }
 
 answer[good].notanswered {
   border-color: rgb(87, 216, 87);
 }
 
-
 answer[good].notanswered::before {
-  content: "→";
+  content: "→ ";
 }
-
 
 answer.notanswered {
   color: rgb(202, 135, 135);
 }
 
-
 answer.answered {
   background: rgb(179, 31, 31);
 }
 
-
-.good:after {
-  content: "...bravo !";
+answer.answered {
+  content: "⚠";
 }
+
+
 
 explanation {
   display: none;
