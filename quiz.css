@@ -71,3 +71,17 @@ explanation {
   display: block;
   visibility: visible;
 }
+
+
+solution {
+     background: gray;
+     color: gray;
+}
+
+
+
+solution:hover {
+     background: inherit;
+     color: inherit;
+}
+

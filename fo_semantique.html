@@ -84,6 +84,10 @@
     <answer>Oui</answer>
     <explanation>
       Eh non. Pour cette question, on suppose que tous les entiers sont des symboles de constante dans la signature. Si on prend un modèle de \(\{p(0), p(1), p(2), ...\}\), l'interprétation de p contient toutes les interprétations de 0, 1, 2, etc. Mais rien nous empêche d'avoir un autre élément qui n'est ni l'interprétation de 0, ni de 1, ni de 2, etc. Exercice : écrire proprement la définition d'un tel modèle à 2 éléments qui est modèle de \(\{p(0), p(1), p(2), ...\}\) mais pas modèle de \(\forall x, p(x)\).
+      
+      <solution>
+        Comme modèle, on considère la structure \(\mathcal S = (D, p^{\mathcal S}, 0^{\mathcal S}, 1^{\mathcal S}, 2^{\mathcal S}, ...)\) avec le domaine \(D = \{🏠, 🌴\}\), i.e. le domaine est contient deux éléments : une maison et un palmier. Dans ce modèle, le symbole de prédicat \(p\) n'est vrai que pour la maison : \(p^{\mathcal S} = \{🏠\}\). Les symboles de constante 0, 1, 2, ... sont interprétés comme la maison : \(0^{\mathcal S} = 1^{\mathcal S} = 2^{\mathcal S} = ... = 🏠\). Les formules \(p(0), p(1), p(2), ...\) sont toutes vraies dans ce modèle. Mais la formule \(\forall x, p(x)\) est fausse puisque \(🌴 \not \in p^{\mathcal S}\), i.e. le palmier ne vérifie pas la propriété \(p\).
+      </solution>
     </explanation>
   </question>
 

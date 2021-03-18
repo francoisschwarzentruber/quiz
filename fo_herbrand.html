@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    Quiz
+  </title>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link href="quiz.css" rel="stylesheet">
+  <script src="quiz.js"></script>
+
+</head>
+
+<body>
+  <h1>Quiz de logique du premier ordre - Herbrand et cie</h1>
+
+  <h2>Forme de Skolem</h2>
+  <question>
+    Quelle est la forme de Skolem de \(\exists x \forall y R(x, y) \) ?
+    <answer good>\(\forall y R(Bob, x)\)</answer>
+    <answer>\(R(a, b)\)</answer>
+    <explanation>
+      La skolémisation consiste à remplacer les variables quantifiées existentiellement par un symbole de constante ou un terme plus compliqué. Les quantifications universelles restent là.
+    </explanation>
+  </question>
+
+  <question>
+    Quelle est la forme de Skolem de \(\forall x \exists y R(x, y) \) ?
+    <answer>\(\forall x R(x, Bob)\)</answer>
+    <answer good> \(\forall x R(x, maman(x))\)</answer>
+    <explanation>
+      Là le choix de l'élément pour la variable y dépend de l'élément dénoté par x.
+    </explanation>
+  </question>
+
+
+
+  <h2>Structures</h2>
+
+  <question>
+    Est-ce que l'on peut créer une structure où le domaine est l'ensemble des matrices 2×2 ?
+    <answer good>Oui</answer>
+    <answer >Non</answer>
+    <explanation>
+      Oui, c'est moi qui choisis ce que je veux pour le domaine, du moment qu'il soit non vide.
+    </explanation>
+  </question>
+
+
+  <question>
+    Est-ce que l'on peut créer une structure où le domaine est l'ensemble des écrans qui se trouvent à moins de 1km de moi ?
+    <answer good>Oui</answer>
+    <answer >Non</answer>
+    <explanation>
+      Oui, comme vous répondez à ce quizz sur un écran (!), cet ensemble est non vide, pas de soucis.
+    </explanation>
+  </question>
+
+  <h2>Modèles de Herbrand</h2>
+
+  <question>
+   Est-ce que l'on peut créer un modèle de Herbrand où le domaine est l'ensemble des matrices 2×2 ?
+    <answer>Oui</answer>
+    <answer good>Non</answer>
+    <explanation>
+      Non, par définition, un modèle de Herbrand est une structure où le domaine est exactement l'ensemble des termes clos pour une signature donnée.
+    </explanation>
+  </question>
+
+  <question>
+    Est-ce que le domaine d'un modèle de Herbrand peut contenir \(estPair(0)\), \(estPair(1)\), \(estPair(1+1)\), où \(estPair\) est un symbole de prédicats ?
+     <answer>Oui</answer>
+     <answer good>Non</answer>
+     <explanation>
+       Non,  \(estPair(0)\) n'est pas un terme ! C'est une formule atomique. Un terme clos est censé représenter un élément. Bon... avec dans un modèle de Herbrand, un terme clos <i>est</i> un élément.
+     </explanation>
+   </question>
+
+   <question>
+    Est-ce que le domaine d'un modèle de Herbrand peut contenir \(0\), \(1\), \(1+1\) ?
+     <answer good>Oui</answer>
+     <answer >Non</answer>
+     <explanation>
+      Oui, ce sont des termes clos (clos = sans variable).
+     </explanation>
+   </question>
+
+
+   <question>
+    Dans un modèle de Herbrand, quel est l'image de \(1+1\) par l'interprétation du symbole de fonction \(f\) d'arité 1 ?
+     <answer good>\(f(1+1)\)</answer>
+     <answer >On ne sait pas, cela dépend du modèle de Herbrand</answer>
+     <explanation>
+       Dans un modèle de Herbrand, l'interprétation des symboles de fonction est <i>gravée dans le marbre</i>. C'est le collage de termes.
+     </explanation>
+   </question>
+
+   <question>
+    Dans un modèle de Herbrand, est-ce que \(estPair(1+1)\) est vraie ?
+     <answer>Oui</answer>
+     <answer good >On ne sait pas, cela dépend du modèle de Herbrand</answer>
+     <explanation>
+       Pour les modèles de Herbarnd, l'interprétation des symboles de prédicat est le degré de liberté. Pour construire un modèle de Herbrand, le domaine est l'ensemble des termes clos - pas le choix, les interprétations des symboles de fonction sont les collages de termes - pas le choix, puis il faut définir l'interprétation des symboles de prédicats.
+     </explanation>
+   </question>
+
+
+   
+</body>
+
+</html>
