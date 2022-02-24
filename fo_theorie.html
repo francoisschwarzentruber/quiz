@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    Quiz
+  </title>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link href="quiz.css" rel="stylesheet">
+  <script src="quiz.js"></script>
+
+</head>
+
+<body>
+  <h1>Quiz de logique du premier ordre - théorie</h1>
+
+  
+  <h2>Théories</h2>
+  <question>
+    Est-ce que \(\{\exists x \exists y x \neq y\}\) est une théorie ?
+    <answer>Oui</answer>
+    <answer good>Non</answer>
+    <explanation>
+      Une théorie doit être close par conséquence logique. (attention, car cela dépend du livre que vous utilisez, il est possible que certains livres définissent la notion de théorie comme non close par conséquence logique, mais ici on fait comme ça).
+    </explanation>
+  </question>
+
+
+
+  <question>
+    Est-ce que l'ensemble des formules closes vraies dans un certain modèle est une théorie ?
+    <answer good>Oui</answer>
+    <answer>Non</answer>
+    <explanation>
+    Oui il s'agit bien d'un ensemble de formules clos par conséquence logique.
+    </explanation>
+  </question>
+
+ <question>
+    Est-ce que l'ensemble des formules closes vraies dans tous les groupes est une théorie ?
+    <answer good>Oui</answer>
+    <answer>Non</answer>
+    <explanation>
+    Oui il s'agit bien d'un ensemble de formules clos par conséquence logique. Il s'agit d'ailleurs de ce qu'on appelle la théorie des groupes !
+    </explanation>
+  </question>
+
+  
+  
+  
+  <h2>Théories complètes</h2>
+  
+   <question>
+    Est-ce que l'ensemble des formules closes vraies dans un certain modèle est une théorie complète ?
+    <answer good>Oui</answer>
+    <answer>Non</answer>
+    <explanation>
+    Oui. Si l'on prend une formule close, elle est soit vraie dans ce modèle, soit fausse.
+    </explanation>
+  </question>
+  
+   <question>
+    Est-ce que l'ensemble des formules closes vraies dans tous les groupes est une théorie complète ?
+    <answer>Oui</answer>
+    <answer good>Non</answer>
+    <explanation>
+    On peut trouver une formule qui ne soit, ni vraie dans tous les groupes, ni fausse dans tous les groupes. Par exemple, une formule qui dit "le domaine est de cardinal exactement 2".
+    </explanation>
+  </question>
+  
+     <question>
+    Est-ce que l'ensemble des formules closes vraies dans tous les groupes de cardinal 4 est une théorie complète ?
+    <answer>Oui</answer>
+    <answer good>Non</answer>
+    <explanation>
+    La formule \(\exists x, x*x \neq e\) est vraie dans le groupe cyclique de cardinal 4 mais fausse dans le groupe de Klein de cardinal 4.
+    </explanation>
+  </question>
+  
+   <question>
+    Est-ce que l'ensemble des formules closes vraies dans tous les groupes de cardinal 3 est une théorie complète ?
+    <answer good>Oui</answer>
+    <answer >Non</answer>
+    <explanation>
+    Tous les groupes de cardinal 3 sont isomorphes. Donc il s'agit des formules closes vraies dans - disons - le groupe \(\mathbb Z / 3 \mathbb Z\). Une formule close y est soit vraie, soit fausse.
+    </explanation>
+  </question>
+  
+  
+  
+  <h2>Théories axiomatisables</h2>
+  
+    <question>
+    Est-ce que la théorie des groupes est axiomatisable ?
+    <answer good>Oui</answer>
+    <answer >Non</answer>
+    <explanation>
+       Bien sûr, avec les trois axiomes des groupes. C'est-à-dire que la théorie des groupes est l'ensemble des conséquences logiques de ces trois axiomes. L'axiomatisation est \(\forall 
+    </explanation>
+  </question>
+  
+  <question>
+    Est-ce que la théorie des groupes admet une axiomatisation composée d'un unique axiome ?
+    <answer good>Oui</answer>
+    <answer >Non</answer>
+    <explanation>
+       Bien sûr, avec les trois axiomes des groupes. C'est-à-dire que la théorie des groupes est l'ensemble des conséquences logiques de ces trois axiomes.
+    </explanation>
+  </question>
+  <question>
+    La formule \(x = y\) est vraie dans un modèle (structure munie d'une certaine assignation). Qu'en pensez-vous
+    ?
+
+    <answer>Que l'on considère deux symboles de variables \(x\) et \(y\) différents.</answer>
+    <answer good>Que les interprétations des variables sont égales.</answer>
+    <explanation>
+      Là, on parle de sémantique et des interprétations des variables dans un modèle. L'interprétation de \(x\) est un
+      élément du domaine. L'interprétation de \(y\) aussi. Comme la formule est \(x = y\) est vraie dans ce modèles,
+      l'interprétation de \(x\)
+      égale à celle de \(y\).
+    </explanation>
+  </question>
+
+
+  <question>
+    Est-ce que les formules \(\exists x \forall y R(x, y)\) et \(\forall y \exists x R(x, y)\) sont équivalentes ?
+
+    <answer>Bien sûr</answer>
+    <answer good>Oh non..</answer>
+    <explanation>
+      Elles ne sont pas équivalentes. Je vous invite à donner un modèle de l'une mais pas de l'autre.
+    </explanation>
+  </question>
+
+
+  <question>
+    Est-ce que \(R(g(a), f(h(b, x)))\) est une formule atomique ?
+
+    <answer good>Bien sûr</answer>
+    <answer>Oh non..</answer>
+    <explanation>
+      Oui c'est une formule atomique. Les "sous-parties" de la formule qui sont plus petits comme \(g(a)\) ou \(f(h(b,
+      x))\) ne sont pas des formules mais des termes.
+    </explanation>
+  </question>
+
+
+  <question>
+    Est-ce que \(1+1\) est une formule ?
+
+    <answer>Bien sûr</answer>
+    <answer good>Oh non..</answer>
+    <explanation>
+      Ce n'est pas une formule mais un terme. L'interprétation d'une formule dans un modèle (structure + assignation des variables)
+      est vraie ou fausse. L'interprétation d'un terme dans un modèle  (structure + assignation des variables, d'ailleurs une algèbre + assignation des varibles suffit) est un élément du domaine.
+    </explanation>
+  </question>
+
+
+  <question>
+    En supposant que = est interprété comme l'égalité car on se place en logique du premier ordre égalitaire, est-ce que
+    \(1+1 = 2\) est une formule valide ?
+
+    <answer>Bien sûr</answer>
+    <answer good>Non</answer>
+    <explanation>
+      Pour interpréter une formule, il faut un modèle qui donne l'interprétation des symboles de constantes 1 et 2,
+      l'interprétation du symbole de fonction +. Seule l'interprétation du symbole de prédicat = est "forcée" : comme on
+      se place en logique du première ordre égalitaire, on ne considère que des modèles où le symbole = est interprété
+      comme l'égalité sur le domaine. Donner un modèle dans lequel la formule \(1+1 = 2\) est fausse.
+    </explanation>
+  </question>
+
+
+
+  <question>
+    En supposant que = est interprété comme l'égalité car on se place en logique du premier ordre égalitaire, est-ce que
+    \(1+1 = 1+1\) est une formule valide ?
+
+    <answer good>Bien sûr</answer>
+    <answer>Non</answer>
+    <explanation>
+      Dans tout modèle, \(1+1\) est interprété comme un certain élément \(e\), comme l'élément \(e\) est égal à
+      l'élément \(e\), la formule \(1+1 = 1+1\) est valide, oui.
+    </explanation>
+  </question>
+
+
+  <question>
+    Est-ce que la formule \(\exists x,\top \) est valide ?
+    <answer good>Oui</answer>
+    <answer>Non</answer>
+    <explanation>
+      La formule \(\exists x,\top \) est valide car le domaine de tout modèle est non vide (c'est par définition d'une structure).
+    </explanation>
+  </question>
+
+
+</body>
+
+</html>
