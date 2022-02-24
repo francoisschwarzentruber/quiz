@@ -15,7 +15,7 @@ window.onload = function () {
                     a.setAttribute("class", "notanswered");
                     a.onclick = () => { };
                 });
-                answer.setAttribute("class", "answered");
+            answer.setAttribute("class", "answered");
             forEach(answer.parentNode.getElementsByTagName("explanation"),
                 (a) => a.setAttribute("class", "explanationVisible"));
         };
