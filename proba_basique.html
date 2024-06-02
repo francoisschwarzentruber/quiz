@@ -83,14 +83,61 @@
 
   <question>
     Peut-on avoir \(P(A) > P(A \cup B) \) ?
-    <answer >
+    <answer>
       Oui
     </answer>
 
     <answer good>Non</answer>
 
-    <explanation>C'est impossible. En effet, comme \(A\) est inclus dans \(A \cup B\), on a forcément \(P(A) \leq P(A \cup B) \).</explanation>
+    <explanation>C'est impossible. En effet, comme \(A\) est inclus dans \(A \cup B\), on a forcément \(P(A) \leq P(A
+      \cup B) \).</explanation>
   </question>
+
+
+  <question>
+    Une famille possède deux enfants. On sait que l’un des enfants est un garçon.
+    Quelle est la probabilité que les deux enfants soient des garçons ?
+
+    <answer>1/2</answer>
+    <answer>4/5</answer>
+    <answer good>1/3</answer>
+
+    <explanation>
+      Les possibilités (équiprobables) sont : GG, FG, GF, FF. On sait que l'un des enfants est un garçon. Donc les
+      possibilités restantes sont : GG, FG, GF. Elles sont toujours équiprobables. Ainsi, la probabilité d'avoir GG est
+      de 1/3. Plus formellement, il s'agit de calculer \(P(GG \mid GG \text{ ou } FG \text{ ou } GF)\).
+    </explanation>
+  </question>
+
+
+
+
+
+
+
+
+
+  <question>
+    Vous êtes à un jeu télévisé. Il y a trois portes. Derrière l'une des portes se cache un cadeau. Vous sélectionnez
+    une des portes. Le présentateur télévisé pour dévoile une des deux autres portes : elle est vide. Que
+    choisissez-vous ?
+
+    <answer>Ouvrir la porte que vous aviez préalablement sélectionnée.</answer>
+    <answer good>Changer de porte.</answer>
+    <answer>N'importe. C'est pareil.</answer>
+  </question>
+
+
+
+  <question>
+    Linda est active, va aux manifestations sur les droits des femmes, participent à des actions de collage. Qu'est ce
+    qui est le plus probable ?
+    <answer good>Il est plus probable que Linda soit une employée de banque.</answer>
+    <answer>Il est plus probable que Linda soit une employée de banque féministe.</answer>
+    <explanation>On note \(E\) l'événénent "Linda est employée de banque". Et \(F\) l'événement "Linda est féministe". On a \(E \cap F \subseteq E\). Donc \(P(E) \geq P(E \cap F)\). </explanation>
+  </question>
+
+
 
 
 
