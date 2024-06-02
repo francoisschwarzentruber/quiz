@@ -1,6 +1,6 @@
 /* Wrapper of each question */
 question {
-  border-top: solid;
+  border-top: 2px solid lightgray;
   display: block;
   padding: 10px;
   margin: 8px 8px 64px 8px;
