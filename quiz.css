@@ -11,9 +11,10 @@ answer {
   display: inline-block;
   padding: 15px;
   margin: 10px;
-  background: #bbbaba;
+  background: #dddada;
   border-radius: 10px;
   cursor: pointer;
+  border: 2px solid black;
 }
 
 
@@ -22,14 +23,14 @@ answer {
 }
 
 .wrong {
-  background: rgb(179, 31, 31);
+  background: rgb(154, 75, 75);
 }
 
 
 
 
 answer[good].answered {
-  background: rgb(87, 216, 87);
+  background: rgb(143, 255, 143);
 }
 
 answer[good].answered:after {
@@ -49,7 +50,7 @@ answer.notanswered {
 }
 
 answer.answered {
-  background: rgb(179, 31, 31);
+  background: rgb(177, 74, 74);
 }
 
 answer.answered {
@@ -60,7 +61,7 @@ answer.answered {
 
 explanation {
   display: none;
-  background: #f0ee6e;
+  background: #f0dc6e;
   padding: 15px;
   border-radius: 10px;
 }
@@ -74,14 +75,13 @@ explanation {
 
 
 solution {
-     background: gray;
-     color: gray;
+  background: gray;
+  color: gray;
 }
 
 
 
 solution:hover {
-     background: inherit;
-     color: inherit;
+  background: inherit;
+  color: inherit;
 }
-

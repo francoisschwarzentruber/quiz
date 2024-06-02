@@ -23,3 +23,29 @@ window.onload = function () {
 };
 
 
+let currentQuestionNode = undefined;
+function question(str) {
+    currentQuestionNode = document.createElement("question");
+    currentQuestionNode.innerHTML = str;
+    document.body.appendChild(currentQuestionNode);
+}
+
+
+function answer(str) {
+    const node = document.createElement("answer");
+    node.innerHTML = str;
+    currentQuestionNode.appendChild(node);
+}
+
+function goodAnswer(str) {
+    const node = document.createElement("answer");
+    node.setAttribute("good", "true");
+    node.innerHTML = str;
+    currentQuestionNode.appendChild(node);
+}
+
+function explanation(str) {
+    const node = document.createElement("explanation");
+    node.innerHTML = str;
+    currentQuestionNode.appendChild(node);
+}

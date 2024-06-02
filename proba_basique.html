@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    Quiz
+  </title>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link href="quiz.css" rel="stylesheet">
+  <script src="quiz.js"></script>
+
+</head>
+
+<body>
+  <h1>Quiz de probabilités</h1>
+
+  <question>
+    Un événement est modélisé par
+    <answer>un élément \(\omega\) de \(\Omega\)</answer>
+    <answer good>un sous-ensemble inclus dans \(\Omega\)</answer>
+    <explanation>
+      Un élément \(\omega\) est une réalisation, un monde possible. Par exemple, "mon dé affiche 3, il fait beau à New
+      York, etc.". Un événement, comme "mon dé affiche un nombre pair" correspond bien à un sous-ensemble de
+      réalisations : celles où mon dé affiche un nombre pair.
+    </explanation>
+  </question>
+
+
+  <question>
+    L'ensemble vide est-il un événement ?
+    <answer>Non</answer>
+    <answer good>Oui</answer>
+    <explanation>
+      Tout sous-ensemble de \(\Omega\) est un événement. En particulier l'ensemble vide. Par contre, il est de
+      probabilité nulle.
+    </explanation>
+  </question>
+
+
+  <question>
+    L'ensemble \(\Omega\) est-il un événement ?
+    <answer>Non</answer>
+    <answer good>Oui</answer>
+    <explanation>
+      Tout sous-ensemble de \(\omega\) est un événement. En particulier l'ensemble \(\Omega\). C'est un événement qui se
+      réalise à coup sûr : il est de probabilité 1.
+    </explanation>
+  </question>
+
+
+
+
+
+  <script>
+    const T = [0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8];
+    const p = T[Math.floor(T.length * Math.random())];
+    question(`Si \\(P(A) = ${p}\\), que vaut \\(P(\\bar A)\\) ?`);
+
+    for (const v of T) {
+      if (Math.abs(v - (1 - p)) < 0.05)
+        goodAnswer(v);
+      else
+        answer(v);
+    }
+    explanation(`\\(A\\) et \\(\\bar A\\) sont complémentaires. La somme des probabilités vaut 1. Donc \\(P(\\bar A) = 1 - P(A).\\) Et \\(1 - ${p}\\) est la bonne réponse !`);
+  </script>
+
+
+
+  <question>
+    Peut-on avoir \(P(A) = P(A \cup B) \) ?
+    <answer good>
+      Oui
+    </answer>
+
+    <answer>Non</answer>
+
+    <explanation>Pour \(A = B\).</explanation>
+  </question>
+
+
+  <question>
+    Peut-on avoir \(P(A) > P(A \cup B) \) ?
+    <answer >
+      Oui
+    </answer>
+
+    <answer good>Non</answer>
+
+    <explanation>C'est impossible. En effet, comme \(A\) est inclus dans \(A \cup B\), on a forcément \(P(A) \leq P(A \cup B) \).</explanation>
+  </question>
+
+
+
+
+</body>
+
+</html>

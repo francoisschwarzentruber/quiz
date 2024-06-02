@@ -1,8 +1,11 @@
 # quiz
-Quiz builder + some quiz (in logic)
+Quiz builder + some quiz (in logic and probability theory)
+
+Works directly without any library. Questions can be written in HTML or in JS (if you want for instance to customize questions).
 
 
-Here is how to write a question and some answers:
+## Write questions in HTML
+Here is how to write a question and some answers in HTML.
 
      <question>
     Est-ce que la formule \(\exists x, \forall y, x = y\) est satisfiable ?
@@ -13,3 +16,14 @@ Here is how to write a question and some answers:
       qu'un seul élément.
     </explanation>
     </question>
+
+
+## Write questions in JS
+
+Here is how to write a question and some answers in HTML.
+
+    <script>
+      question("Es-tu heureuse ?");
+      answer("Non");
+      goodAnswer("Oui");
+    </script>
