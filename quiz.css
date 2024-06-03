@@ -34,7 +34,27 @@ answer[good].answered {
 }
 
 answer[good].answered:after {
-  content: "👍";
+  content: " 👍";
+  display: inline-block;
+  animation: goodAnswerAfter 1s;
+  transform: rotate(10deg);
+}
+
+@keyframes goodAnswerAfter {
+  0% {
+    scale: 2.0;
+    transform: rotate(0deg)
+  }
+
+  33% {
+    scale: 8.0;
+    transform: rotate(20deg)
+  }
+
+  100% {
+    scale: 1.0;
+    transform: rotate(0deg)
+  }
 }
 
 answer[good].notanswered {
@@ -52,6 +72,31 @@ answer.notanswered {
 answer.answered {
   background: rgb(177, 74, 74);
 }
+
+answer.answered:after {
+  content: " ❌";
+  display: inline-block;
+  animation: badAnswerAfter 1s;
+}
+
+
+@keyframes badAnswerAfter {
+  0% {
+    scale: 2.0;
+    transform: rotate(0deg)
+  }
+
+  33% {
+    scale: 4.0;
+    transform: rotate(20deg)
+  }
+
+  100% {
+    scale: 0.0;
+    transform: rotate(0deg)
+  }
+}
+
 
 answer.answered {
   content: "⚠";
