@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    Quiz
+  </title>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link href="quiz.css" rel="stylesheet">
+  <script src="quiz.js"></script>
+
+</head>
+
+<body>
+  <h1>Quiz de probabilités : variables aléatoires</h1>
+
+  <h2>Deux lancers d'un dé</h2>
+
+  Considérons un dé à six faces. Un résultat est parmi 1, 2, 3, 4, 5, 6.
+  Lancons un dé deux fois de suite. On note \(X_1\) le résultat du premier lancer et \(X_2\) le résultat du deuxième
+  lancer. Quelles valeurs peuvent prendre les variables aléatoires suivantes :
+
+  <question>
+    \(\max(X_1, X_2)\)
+    <answer good>1, .., 6</answer>
+    <answer>1, .., 12</answer>
+    <answer>2, .., 24</answer>
+  </question>
+
+
+
+  <question>
+    \(\min(X_1, X_2)\)
+    <answer good>1, .., 6</answer>
+    <answer>1, .., 12</answer>
+    <answer>2, .., 24</answer>
+  </question>
+
+
+  <question>
+    \(X_1 + X_2\)
+    <answer>1, .., 12</answer>
+    <answer good>2, .., 12</answer>
+    <answer>2, .., 24</answer>
+  </question>
+
+  <question>
+    \(X_1 - X_2\)
+    <answer>1, .., 6</answer>
+    <answer good>-5, .., 5</answer>
+    <answer>-5, .., 1</answer>
+  </question>
+
+  <question>
+    \(X_2 - X_1\)
+    <answer>1, .., 6</answer>
+    <answer good>-5, .., 5</answer>
+    <answer>-5, .., 1</answer>
+  </question>
+
+  <h2>Question sur un quizz</h2>
+  Considérons un quizz comme la section précédente : 5 questions avec trois réponses chacunes (et une correcte pour
+  chaque question). Considérons une étudiante qui répond en devinant.
+
+  <question>
+    Quel est la probabilité qu'elle ait 4 ou plus réponses correctes ?
+    <answer>\(0.25 + 0.2\)</answer>
+    <answer good>\((1/3)^5 + 5*(1/3)^4*(2/3)\)</answer>
+    <answer>\(-(1/3)^5 + 1/5*(1/3)^4*(2/3)\)</answer>
+  </question>
+
+
+
+<h2>Surbooking dans une compagnie d'avion</h2>
+
+On suppose qu'un passager ayant acheté sa place a une probabilité de 5% de ne pas venir à l'embarquement. Sur un avion de 50 places, la compagnie vend 52 tickets. On suppose que tous les tickets sont vendus.
+
+
+<question>
+  Quel est la probabilité que tous les passagers qui sont venus à l'embarquement ait une place dans l'avion ?
+  <answer>\(1\)</answer>
+  <answer good>\(1 - 52 * 0.95 * 0.05 - 0.95^2\)</answer>
+  <answer>\(1 - 52 * 0.95 * 0.05\)</answer>
+  <answer>\(1 - 1/52 * 0.95 * 0.05\)</answer>
+  <answer>\(1 - 1/52 * 0.95 * 0.95\)</answer>
+</question>
+
+
+
+</body>
+
+</html>
