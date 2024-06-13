@@ -81,12 +81,14 @@ On suppose qu'un passager ayant acheté sa place a une probabilité de 5% de ne 
 <question>
   Quel est la probabilité que tous les passagers qui sont venus à l'embarquement ait une place dans l'avion ?
   <answer>\(1\)</answer>
-  <answer good>\(1 - 52 * 0.95 * 0.05 - 0.95^2\)</answer>
+  <answer good>\(1 - 52 * 0.05 * 0.95^{51} - 0.95^{52}\)</answer>
   <answer>\(1 - 52 * 0.95 * 0.05\)</answer>
   <answer>\(1 - 1/52 * 0.95 * 0.05\)</answer>
   <answer>\(1 - 1/52 * 0.95 * 0.95\)</answer>
+  <explanation>
+  On pose \(N\) le nombre de personnes parmi les 52 qui sont venus à l'embarquement. La variable aléatoire \(N\) soit une loi binomiale \(\mathcal B(52, 0.95)\). L'objectif est de calculer \(P(N \leq 50)\). Dit autrement, il s'agit de calculer \(1-P(N \geq 51) = 1 - P(N=51) - P(N=52)\). La probabilité d'avoir \(N=52\) est \(0.95^{52}\). La probabilité d'avoir \(N=51\) est \(52*0.05*0.95^{51}\). 
+  </explanation>  
 </question>
-
 
 
 </body>
